@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Login Screen -->
+  <div id="loginScreen" class="card">
+    <h2>Admin Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Main App -->
+  <div id="appScreen" style="display:none;">
+    <header>
+      <h1>Hospital Management Information System</h1>
+      <button onclick="logout()">Logout</button>
+    </header>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="card stats">
+      <div class="statBox">
+        <h3>Total Patients</h3>
+        <p id="statPatients">0</p>
+      </div>
+      <div class="statBox">
+        <h3>Total Doctors</h3>
+        <p id="statDoctors">0</p>
+      </div>
+      <div class="statBox">
+        <h3>Appointments</h3>
+        <p id="statAppointments">0</p>
+      </div>
+      <div class="statBox">
+        <h3>Total Billing (KSh)</h3>
+        <p id="statBilling">0</p>
+      </div>
+    </section>
+
+    <main>
+      <!-- Patients -->
+      <section class="card">
+        <h2>Patient Registration</h2>
+        <input type="text" id="patientName" placeholder="Full Name">
+        <input type="number" id="patientAge" placeholder="Age">
+        <input type="text" id="patientGender" placeholder="Gender">
+        <button onclick="addPatient()">Add Patient</button>
+      </section>
+
+      <section class="card">
+        <h2>Patients List</h2>
+        <table id="patientsTable">
+          <thead>
+            <tr><th>ID</th><th>Name</th><th>Age</th><th>Gender</th><th>Action</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- Doctors -->
+      <section class="card">
+        <h2>Doctor Management</h2>
+        <input type="text" id="doctorName" placeholder="Doctor Name">
+        <input type="text" id="doctorSpecialty" placeholder="Specialty">
+        <button onclick="addDoctor()">Add Doctor</button>
+      </section>
+
+      <section class="card">
+        <h2>Doctors List</h2>
+        <table id="doctorsTable">
+          <thead>
+            <tr><th>ID</th><th>Name</th><th>Specialty</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- Appointments -->
+      <section class="card">
+        <h2>Appointments</h2>
+        <select id="appointmentPatient"></select>
+        <select id="appointmentDoctor"></select>
+        <input type="date" id="appointmentDate">
+        <input type="time" id="appointmentTime">
+        <button onclick="addAppointment()">Add Appointment</button>
+      </section>
+
+      <section class="card">
+        <h2>Appointments List</h2>
+        <table id="appointmentsTable">
+          <thead>
+            <tr><th>ID</th><th>Patient</th><th>Doctor</th><th>Date</th><th>Time</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- Billing -->
+      <section class="card">
+        <h2>Billing</h2>
+        <select id="billPatient"></select>
+        <input type="number" id="billAmount" placeholder="Amount">
+        <button onclick="addBill()">Add Bill</button>
+      </section>
+
+      <section class="card">
+        <h2>Bills List</h2>
+        <table id="billsTable">
+          <thead>
+            <tr><th>ID</th><th>Patient</th><th>Amount</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- Reports -->
+      <section class="card">
+        <h2>Reports</h2>
+        <select id="reportType">
+          <option value="patients">Patients</option>
+          <option value="doctors">Doctors</option>
+          <option value="appointments">Appointments</option>
+          <option value="bills">Billing</option>
+        </select>
+        <button onclick="generateReport()">Generate Report</button>
+        <button onclick="downloadCSV()">Download CSV</button>
+        <button onclick="printReport()">Print Report</button>
+        <div id="reportArea"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
