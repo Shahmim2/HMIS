@@ -1,0 +1,80 @@
+/* Pink & Blue gradient background */
+body {
+  
+  background:blue;
+  color: #000000cb;
+  padding: 20px;
+  border-radius: 10px;body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: blue; /* Pink & Blue background */
+  color:blue;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+  margin: 10px 0;
+  width: 800px;
+}
+
+/* Dashboard stats */
+.stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.statBox {
+  background: #2563eb;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1;
+}
+.statBox h3 {
+  margin: 0 0 10px;
+}
+.statBox p {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input, button, select {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
